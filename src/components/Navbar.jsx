@@ -24,6 +24,9 @@ export default function Navbar(props) {
       <Link to="/login">
           login
       </Link>
+      <Link to="/calc">
+          Calculator
+      </Link>
     </>
   )
 

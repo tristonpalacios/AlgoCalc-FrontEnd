@@ -7,6 +7,7 @@ import Profile from './components/Profile'
 import Register from './components/Register'
 import Welcome from './components/Welcome'
 import './App.css';
+import AlgoCalc from './components/AlgoCalc'
 
 function App() {
   // user data if the a user is logged in 
@@ -54,12 +55,12 @@ function App() {
             element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} 
           />
 
-          
+{/*           
            pre-refactor
            <Route 
             path="/profile" 
             element={<Profile currentUser={ currentUser } />}
-           /> 
+           />  */}
          
 
 
@@ -72,6 +73,10 @@ function App() {
           <Route 
             exact path="/" 
             element={<Welcome />} 
+            />
+          <Route 
+            exact path="/calc" 
+            element={<AlgoCalc />} 
             />
         </Routes>
     </div>
