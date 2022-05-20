@@ -100,36 +100,28 @@ export default function AlgoCalc() {
       algoType: algoType,
     };
     createArray(dataLength);
-    if (algoType === "BubbleSort") {
-      const start = performance.now();
+
+    if(algoType === 'All'){
+   
+      const bubbleStart = performance.now();
       bubbleArray = [...starterArray];
       bubbleSort(bubbleArray);
-      bubbleSortExecutionTime = performance.now() - start;
-      setMessage(
-        ` Sorted ${starterArray.length} values with  ${algoType}. Your unsorted data is ${starterArray} and your sorted data is ${bubbleArray}. It took ${algoType} ${bubbleCounter} swaps. Bubble Sort sorted ${starterArray.length} values in ${bubbleSortExecutionTime} milliseconds`
-      );
-    }
+      bubbleSortExecutionTime = (performance.now() - bubbleStart).toFixed(2);
 
-    if (algoType === "MergeSort") {
-      const start = performance.now();
+      const mergeStart = performance.now();
       mSArray = [...starterArray];
       let sortedData = mergeSort(mSArray);
-      mergeSortExecutionTime = performance.now() - start;
-      setMessage(
-        ` Sorted ${starterArray.length} values with  ${algoType}. Your unsorted data is ${starterArray} and your sorted data is ${sortedData}. It took ${algoType} ${mergeSortSortCounter} Sorts and ${mergeSortMergeCounter} merges. Merge Sort sorted ${starterArray.length} values in ${mergeSortExecutionTime} milliseconds`
-      );
-    }
-
-    if (algoType === "InsertionSort") {
-      const start = performance.now();
+      mergeSortExecutionTime = (performance.now() - mergeStart).toFixed(2);
+    
+      const insertionStart = performance.now();
       insertionArray = [...starterArray];
       insertionSort(insertionArray);
       console.log(insertionArray);
       console.log(insertionCounter)
-      insertionSortExecutionTime = performance.now() - start;
-      setMessage(
-        ` Sorted ${starterArray.length} values with  ${algoType}. Your unsorted data is ${starterArray} and your sorted data is ${insertionArray}. It took ${algoType} ${insertionCounter} insertions. Insertion Sort sorted ${starterArray.length} values in ${insertionSortExecutionTime} milliseconds`
-      );
+      insertionSortExecutionTime = (performance.now() - insertionStart).toFixed(2);
+
+      setMessage(`Bubble Sort sorted data in ${bubbleSortExecutionTime} milliseconds and in ${bubbleCounter.toLocaleString("en-US")} swaps. Merge Sort sorted the data in ${mergeSortExecutionTime} milliseconds in ${mergeSortSortCounter.toLocaleString("en-US")} sorts. Insertion Sort sorted the data in ${insertionSortExecutionTime} milliseconds and in ${insertionCounter.toLocaleString("en-US")} insertions`)
+      
     }
   };
 
@@ -142,9 +134,9 @@ export default function AlgoCalc() {
           id="data-array-length"
           type="number"
           onChange={(e) => setDataLength(e.target.value.replace(/\D/, ""))}
-          placeholder="Max of 9999"
+          placeholder="Max of 50,000"
           label="Size of data"
-          max="9999"
+          max="50,000"
           value={dataLength}
         />
 
@@ -156,10 +148,10 @@ export default function AlgoCalc() {
         >
           <option>Select Algo Type</option>
           <option value="MergeSort">Merge Sort</option>
-          <option value="BinarySearch">Binary Search</option>
           <option value="QuickSort">Quick Sort</option>
           <option value="BubbleSort">Bubble Sort</option>
           <option value="InsertionSort">Insertion Sort</option>
+          <option value="All">All</option>
         </Form.Select>
         <br />
         <input type="submit" value="sumbit" />

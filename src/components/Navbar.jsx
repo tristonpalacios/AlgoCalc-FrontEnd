@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom' 
 
-export default function Navbar(props) {
+
+export default function Nav(props) {
   // if the user is logged in
   const loggedIn = (
     <>
@@ -27,6 +28,7 @@ export default function Navbar(props) {
       <Link to="/calc">
           Calculator
       </Link>
+      
     </>
   )
 
@@ -38,5 +40,6 @@ export default function Navbar(props) {
       
       {props.currentUser ? loggedIn : loggedOut}
     </nav>
+    
   )
 }
