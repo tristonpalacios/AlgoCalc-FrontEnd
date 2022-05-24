@@ -24,15 +24,51 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.GraphCard {
+  grid-area: 2 / 3 / 5 / 6;
+  background: #e8e8e8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 95%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CalcHomePage {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.CalcTitle {
+  grid-area: 1 / 1 / 2 / 6;
+}
+.CalcForm {
+  grid-area: 2 / 1 / 5 / 3;
+  background-color: #e8e8e8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 482px;
+  height: 380px;
+}
+
+.div4 {
+  grid-area: 5 / 1 / 6 / 3;
+}
+.AlgoData {
+  grid-area: 5 / 3 / 6 / 6;
+  background: #E8E8E8;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+width: 95%;
+margin: auto;
+}
+
+.LoginReg{
+  background: #828282 !important;
+border: 1px solid #AAAAAA !important;
+border-radius: 10px;
+}
+.Nav{
+  margin: auto;
 }

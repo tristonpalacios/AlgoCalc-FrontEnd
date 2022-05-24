@@ -9,6 +9,7 @@ import Welcome from './components/Welcome'
 import './App.css';
 import AlgoCalc from './components/AlgoCalc'
 
+
 function App() {
   // user data if the a user is logged in 
   const [currentUser, setCurrentUser] = useState(null)
@@ -38,10 +39,8 @@ function App() {
 
   return (
     <Router>
-
-    <header>
       <Navbar currentUser={ currentUser } handleLogout={ handleLogout } />
-    </header>
+
 
     <div className="App">
         <Routes>

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom' 
 
+import { Navbar,Container,Button } from 'react-bootstrap'
+
 
 export default function Nav(props) {
   // if the user is logged in
@@ -33,13 +35,19 @@ export default function Nav(props) {
   )
 
   return (
-    <nav>
-      <Link to="/">
-        <h5>user app</h5>
-      </Link>
-      
-      {props.currentUser ? loggedIn : loggedOut}
-    </nav>
+    <Container>
+    <Navbar expand="lg" variant="light" bg="light" className='Nav mx-auto'>
+      <Container>
+        <Navbar.Brand href="/calc">Algo Calc</Navbar.Brand>
+        <Button className='LoginReg'>
+        <Navbar.Brand className='ms-auto' href="/login">Login |</Navbar.Brand>
+        <Navbar.Brand href="/Register">Register</Navbar.Brand>
+        </Button>
+  
+        
+      </Container>
+    </Navbar>
+  </Container>
     
   )
 }
